@@ -29,41 +29,31 @@ const NavBar = () => {
       }
 
 
-      const container = {
-        hidden: {x: -1000 ,opacity: 0 },
-        show: {
-           x: 0, 
-          opacity: 1,
-          transition: {
-            duration: 2,
-            delayChildren: 0.5,
-            staggerDirection: -1
-          }
-        }
-      }
+     
       
     
     return (isOpen) ? (
 
         <motion.nav 
-        layout
         initial = {{opacity: 0}}
         animate={{ opacity: 1}}
         transition={{
           duration: 1,
         }}
-        className = 'flex justify-center'>
-               < motion.div  
+        className = 'flex justify-center md:min-w-[1200px]'
+        >
+               < motion.div
+               layout  
                onClick={() => setIsOpen(!isOpen)}
                initial = {{y: -200}}
                animate = {{y:0}}
                transition ={{duration: 1}}
-               className='pt-10  max-w-[360px] lg:max-w-[1200px] justify-between items-center  fixed  flex  text-white'>
-                <h1 className=' lg:text-2xl max-w-[200px] font-bold font-cizel'>Masked Optics <span>Photography</span></h1>
+               className='pt-6 lg:pt-10  max-w-[370px] md:min-w-[1200px] space-x-12  justify-between  items-center z-50  fixed  flex  text-white'>
+                <h1 className=' lg:text-2xl max-w-[200px] lg:max-w-full font-bold font-cizel'>Masked Optics <span>Photography</span></h1>
                  
                <motion.div 
                data-isOpen={!isOpen}
-               className = ' flex items-center cursor-pointer font-bold font-mons space-x-4 lg:space-x-12' > 
+               className = ' flex items-center cursor-pointer font-bold font-mons space-x-4'  > 
                {isOpen ? <motion.h4 
                whileHover={{ scale: 1.3 }}
                whileTap={{ scale: 1 }}
@@ -87,38 +77,36 @@ const NavBar = () => {
       : (  
        <>
         <motion.nav 
-      layout
+        layout
       initial = {{opacity: 0}}
       animate={{ opacity: 1}}
       transition={{
           duration: 1,
         }}
-        className = 'flex justify-center'>
+        className = 'flex justify-end max-w-[330px] md:max-w-[1350px]'>
                < motion.div 
+               layout
                onClick={resetState} 
                initial = {{y: -200, opacity: 0}}
                animate = {{y: 0, opacity: 1}}
                transition ={{duration: 1}}
                
-               className='pt-10 w-[1200px] cursor-pointer font-mons font-bold space-x-12 justify-end items-center z-50 fixed  flex  text-white'>
+               className='pt-6 lg:pt-10  justify-end cursor-pointer font-mons font-bold space-x-4  items-center z-50 fixed  flex  text-white'>
                  {isOpen ? <h4>Menu</h4> : <motion.h4
-                 className='text-2xl'
+                 className='lg:text-2xl'
                  whileHover={{ scale: 1.3 }}
                  whileTap={{ scale: 1 }}
                  >Close</motion.h4>}
-                 <motion.div
-               variants={NavVariants}
-               whileHover= 'hover'
-                >
-                <MenuDiamond  className = ' animate-pulse diamond' />
+                 <motion.div>
+                
+                <MenuDiamond  className = ' max-w-[30px] md:max-w-full animate-pulse diamond' />
                 </motion.div>
             </motion.div>
                     
         </motion.nav>
     
     <motion.nav  
-      layout
-      initial = {{x:-2000, opacity: 0}}
+      initial = {{x:-1000, opacity: 0}}
       animate = {{x:0, opacity: 1}}
       transition={{
         duration: 1,
@@ -129,10 +117,8 @@ const NavBar = () => {
         
        
     <motion.ul
-     variants={container}
-    initial= 'hidden'
-    animate = 'show'
-    id="menu-items">
+    id="menu-items"
+    className='font-2xl'>
       <motion.li className="menu-item">Home</motion.li>
       <motion.li className="menu-item">Portfolio</motion.li>
       <motion.li className="menu-item">About</motion.li>
