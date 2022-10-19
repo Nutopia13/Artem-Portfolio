@@ -74,8 +74,27 @@ body{
   z-index: 1;
 }
 
+
+@media only screen and (min-width: 767px) {
+  #menu-background-image {
+    background-image: url('./assets/Artie_Photo/Nav_BG.jpg');
+    background-size: 100vmax;
+    height: 100%;
+    left: 0px;  
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease,
+      background-size 800ms ease,
+      background-position 800ms ease;
+    width: 100%;
+    z-index: 0;
+  }
+  
+}
+
 #menu-background-image {
-  background-image: url('./assets/Artie_Photo/Nav_BG.jpg');
+  background-image: #1f1f26;
   background-size: 100vmax;
   height: 100%;
   left: 0px;  
@@ -88,6 +107,7 @@ body{
   width: 100%;
   z-index: 0;
 }
+
 
 #menu-items:hover ~ #menu-background-pattern {
   background-size: 11vmin 11vmin;

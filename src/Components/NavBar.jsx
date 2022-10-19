@@ -58,21 +58,21 @@ const NavBar = () => {
                initial = {{y: -200}}
                animate = {{y:0}}
                transition ={{duration: 1}}
-               className='pt-10 w-[1200px] justify-between items-center space-x-16 fixed  flex  text-white'>
-                <h1 className='text-2xl font-bold font-cizel'>Masked Optics <span>Photography</span></h1>
+               className='pt-10  max-w-[360px] lg:max-w-[1200px] justify-between items-center  fixed  flex  text-white'>
+                <h1 className=' lg:text-2xl max-w-[200px] font-bold font-cizel'>Masked Optics <span>Photography</span></h1>
                  
                <motion.div 
                data-isOpen={!isOpen}
-               className = ' flex items-center cursor-pointer font-bold font-mons space-x-12' > 
+               className = ' flex items-center cursor-pointer font-bold font-mons space-x-4 lg:space-x-12' > 
                {isOpen ? <motion.h4 
                whileHover={{ scale: 1.3 }}
                whileTap={{ scale: 1 }}
-               className='text-2xl'>Menu</motion.h4> : <h4>Close</h4>}
+               className='lg:text-2xl'>Menu</motion.h4> : <h4>Close</h4>}
                <motion.div
                variants={NavVariants}
                whileHover= 'hover'
                 >
-                <MenuDiamond  className = ' animate-pulse diamond' />
+                <MenuDiamond  className = ' max-w-[30px] md:max-w-full animate-pulse diamond' />
                 </motion.div>
                 
                </motion.div>
