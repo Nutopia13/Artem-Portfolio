@@ -1,3 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: #1f1f26;
+}
+/* ! Navbar */
+
+#menu {
+  position: absolute;
+  background-color: #1f1f26;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 20%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 25%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 30%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 40%;
+}
+
+#menu-background-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+  background-position: 50% 50%;
+  background-size: 12vmin 12vmin;
+  height: 100vh;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+  width: 100vw;
+  z-index: 0;
+}
+
+@media only screen and (min-width: 767px) {
+  #menu-background-image {
+    background-image: url("./assets/Artie_Photo/Nav_BG.jpg");
+    background-size: 100vmax;
+    height: 100%;
+    left: 0px;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+    width: 100%;
+    z-index: 0;
+  }
+}
+#menu-background-image {
+  background-image: #1f1f26;
+  background-size: 100vmax;
+  height: 100%;
+  left: 0px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+  width: 100%;
+  z-index: 0;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 100vmax;
+  opacity: 0.7;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+.menu-item {
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: "Ibarra Real Nova", serif;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  text-decoration: none;
+  transition: opacity 400ms ease;
+}
+
+/* ! Cursor */
+.App{
+  cursor: none;
+}
+
+
 .main-cursor,
 .secondary-cursor {
   z-index: 10000;
@@ -204,4 +336,17 @@
   to {
     transform: translate(0px, -50%);
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char{
+  transform: translateY(150px);
+  transition: transform .3s;
+}

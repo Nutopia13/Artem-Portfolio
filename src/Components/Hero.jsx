@@ -8,8 +8,6 @@ const Hero = () => {
 
   useEffect(() => {
     const title = document.querySelector("#mytitle");
-    const bio = document.querySelector("#mybio");
-    const myBio = new SplitType(bio, { types: 'words' })
     const myTitle = new SplitType(title);
     gsap.to(".char", {
       y: 0,

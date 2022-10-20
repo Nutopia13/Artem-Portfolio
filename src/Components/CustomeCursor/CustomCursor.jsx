@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
+
 const CustomCursor = () => {
-  const { type } = useContext(CustomCursorContext);
   const secondaryCursor = React.useRef(null);
   const mainCursor = React.useRef(null);
   const positionRef = React.useRef({
@@ -67,7 +67,7 @@ const CustomCursor = () => {
     followMouse();
   }, []);
   return (
-    <div className={`cursor-wrapper ${type}`}>
+    <div className= 'cursor-wrapper hidden lg:block' >
       <div className="main-cursor " ref={mainCursor}>
         <div className="main-cursor-background"></div>
       </div>
