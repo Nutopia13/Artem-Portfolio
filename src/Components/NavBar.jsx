@@ -60,7 +60,7 @@ const NavBar = () => {
             <AnimatePresence>
               {!isOpen && (
                 <motion.h4
-                  
+                  layout
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
