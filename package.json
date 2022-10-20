@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "framer-motion": "^7.6.1",
+    "gsap": "^3.11.3",
     "react": "^18.2.0",
+    "react-animated-text-content": "^1.0.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
