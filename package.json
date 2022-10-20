@@ -14,6 +14,7 @@
     "paper": "^0.12.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-image-follow": "^1.2.2",
     "react-intersection-observer": "^9.4.0",
     "simplex-noise": "^4.0.1",
     "split-type": "^0.3.2"

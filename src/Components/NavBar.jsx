@@ -25,12 +25,13 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="flex justify-center z-10 md:min-w-[1200px]">
+      <nav className="flex justify-center  z-50 md:min-w-[1200px]">
         <motion.div
+          layout
           initial={{ y: -200 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
-          className="pt-6 lg:pt-10  max-w-[370px] md:min-w-[1200px] space-x-12  justify-between fixed items-center z-50   flex  text-white"
+          className="pt-6 lg:pt-10  max-w-[370px] md:min-w-[1200px] space-x-12 fixed justify-between items-center z-50   flex  text-white"
         >
           <h2 className=" lg:text-2xl max-w-[200px] lg:max-w-full font-bold font-cizel">
             Masked Optics <span>Photography</span>
@@ -43,12 +44,12 @@ const NavBar = () => {
             <AnimatePresence>
               {isOpen && (
                 <motion.h4
+                  layout
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -100 }}
                   transition={{ duration: 0.5 }}
                 >
                   Menu
@@ -59,12 +60,12 @@ const NavBar = () => {
             <AnimatePresence>
               {!isOpen && (
                 <motion.h4
+                  layout
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
+                  initial={{ opacity: 0, y: -100 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
                   Close
@@ -88,24 +89,29 @@ const NavBar = () => {
               duration: 1,
               layout: { duration: 2 },
             }}
-            exit={{ y: -1000, opacity: 0, transition: { delay: 0.3, duration: 1 } }}
+            exit={{
+              y: -1000,
+              opacity: 0,
+              transition: { delay: 0.3, duration: 1 },
+            }}
             id="menu"
           >
-            <motion.ul 
-            initial = {{y:-1000, opacity: 0}}
-            animate={{ y:0 ,opacity: 1}}
-            exit = {{y: -1000, opacity: 0}}
-            transition={{
-              duration: 1,
-              delayChildren: 1,
-              staggerChildren: 1}}
-            id="menu-items" className="text-[40px] lg:text-[60px]">
-
+            <motion.ul
+              initial={{ y: -1000, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -1000, opacity: 0 }}
+              transition={{
+                duration: 1,
+                delayChildren: 1,
+                staggerChildren: 1,
+              }}
+              id="menu-items"
+              className="text-[40px] lg:text-[60px]"
+            >
               <motion.li className="menu-item">Home</motion.li>
               <motion.li className="menu-item">Portfolio</motion.li>
               <motion.li className="menu-item">About</motion.li>
               <motion.li className="menu-item">Contact Us</motion.li>
-
             </motion.ul>
             <div id="menu-background-pattern"></div>
             <div id="menu-background-image"></div>

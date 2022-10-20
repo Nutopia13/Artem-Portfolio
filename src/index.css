@@ -145,21 +145,21 @@ body {
   mix-blend-mode: difference;
 }
 .main-cursor .main-cursor-background {
-  width: 30px;
-  height: 30px;
-  background: white;
+  width: 40px;
+  height: 40px;
+  background: wheat;
   border-radius: 50%;
 }
 
 .secondary-cursor {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 .secondary-cursor .cursor-background {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid white;
   position: relative;
 }
 .secondary-cursor .cursor-background:after, .secondary-cursor .cursor-background:before {
