@@ -30,7 +30,7 @@ const Hero = () => {
 
   return (
     <div className="flex justify-center mt-36 lg:mt-64 relative -z-10">
-      <div className="max-w-[300px] text-white lg:max-w-[1200px] flex flex-wrap justify-center  w-full ">
+      <div className="max-w-[300px] text-white md:max-w-[450px] lg:max-w-[1200px] flex flex-wrap justify-center  w-full ">
         <div className="hero_text--cont text-center">
           <motion.img
           initial={{ opacity: 0, y: -10000 }}
@@ -43,7 +43,7 @@ const Hero = () => {
           >
             One Shot. One Memory
           </h1>
-          <blockquote  className="italic text-md lg:text-lg relative z-20 pt-7 ">
+          <blockquote  className="italic text-md lg:text-lg relative z-20 pt-4 ">
             <p id = 'quote' >
               "In photography there is a reality so subtle that it becomes more
               real than reality."

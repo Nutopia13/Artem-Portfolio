@@ -12,8 +12,8 @@ function App() {
         <NavBar />
       </header>
      
-      <main>
       <CustomCursor />
+      <main>
         <Hero />
         <About />
         <Portfolio />
