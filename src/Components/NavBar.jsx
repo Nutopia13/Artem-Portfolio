@@ -83,22 +83,30 @@ const NavBar = () => {
       <AnimatePresence>
         {!isOpen && (
           <motion.nav
-            initial={{ x: -1000, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               layout: { duration: 2 },
             }}
-            exit={{ x: -1000, opacity: 0 }}
+            exit={{ y: -1000, opacity: 0, transition: { delay: 0.3, duration: 1 } }}
             id="menu"
           >
-            <motion.ul id="menu-items" className="text-[40px] lg:text-[60px]">
-            
-                <motion.li className="menu-item">Home</motion.li>
-                <motion.li className="menu-item">Portfolio</motion.li>
-                <motion.li className="menu-item">About</motion.li>
-                <motion.li className="menu-item">Contact Us</motion.li>
-             
+            <motion.ul 
+            initial = {{y:-1000, opacity: 0}}
+            animate={{ y:0 ,opacity: 1}}
+            exit = {{y: -1000, opacity: 0}}
+            transition={{
+              duration: 1,
+              delayChildren: 1,
+              staggerChildren: 1}}
+            id="menu-items" className="text-[40px] lg:text-[60px]">
+
+              <motion.li className="menu-item">Home</motion.li>
+              <motion.li className="menu-item">Portfolio</motion.li>
+              <motion.li className="menu-item">About</motion.li>
+              <motion.li className="menu-item">Contact Us</motion.li>
+
             </motion.ul>
             <div id="menu-background-pattern"></div>
             <div id="menu-background-image"></div>
