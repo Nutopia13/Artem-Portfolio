@@ -1,139 +1,207 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@600;700&display=swap');
-
-
-
-body{
-  background-color: #1f1f26;
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
 }
 
-#menu {  
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+.main-cursor {
+  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  mix-blend-mode: difference;
+}
+.main-cursor .main-cursor-background {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
 }
 
-#menu-items {
-  margin-left: clamp(4rem, 20vw, 48rem);
-  position: relative;
-  z-index: 2;
+.secondary-cursor {
+  width: 60px;
+  height: 60px;
 }
-
-#menu[data-active-index="0"] > #menu-background-pattern {
-  background-position: 0% -25%;
-}
-
-#menu[data-active-index="1"] > #menu-background-pattern {
-  background-position: 0% -50%;
-}
-
-#menu[data-active-index="2"] > #menu-background-pattern {
-  background-position: 0% -75%;
-}
-
-#menu[data-active-index="3"] > #menu-background-pattern {
-  background-position: 0% -100%;
-}
-
-#menu[data-active-index="0"] > #menu-background-image {
-  background-position: center 20%;
-}
-
-#menu[data-active-index="1"] > #menu-background-image {
-  background-position: center 25%;
-}
-
-#menu[data-active-index="2"] > #menu-background-image {
-  background-position: center 30%;
-}
-
-#menu[data-active-index="3"] > #menu-background-image {
-  background-position: center 40%;
-}
-
-#menu-background-pattern {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.1) 9%, 
-    transparent 9%
-  );
-  background-position: 50% 50%;
-
-  background-size: 12vmin 12vmin;
-  height: 100vh;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: opacity 800ms ease, 
-    background-size 800ms ease,
-    background-position 800ms ease;
-  width: 100vw;
-  z-index: 0;
-}
-
-
-@media only screen and (min-width: 767px) {
-  #menu-background-image {
-    background-image: url('./assets/Artie_Photo/Nav_BG.jpg');
-    background-size: 100vmax;
-    height: 100%;
-    left: 0px;  
-    opacity: 0.5;
-    position: absolute;
-    top: 0px;
-    transition: opacity 800ms ease,
-      background-size 800ms ease,
-      background-position 800ms ease;
-    width: 100%;
-    z-index: 0;
-  }
-  
-}
-
-#menu-background-image {
-  background-image: #1f1f26;
-  background-size: 100vmax;
-  height: 100%;
-  left: 0px;  
-  opacity: 0.5;
-  position: absolute;
-  top: 0px;
-  transition: opacity 800ms ease,
-    background-size 800ms ease,
-    background-position 800ms ease;
+.secondary-cursor .cursor-background {
   width: 100%;
-  z-index: 0;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
 }
-
-
-#menu-items:hover ~ #menu-background-pattern {
-  background-size: 11vmin 11vmin;
-  opacity: 0.5;
-}
-
-#menu-items:hover ~ #menu-background-image {
-  background-size: 100vmax;
-  opacity: 0.7;
-}
-
-#menu-items:hover > .menu-item {
-  opacity: 0.3;
-}
-
-#menu-items:hover > .menu-item:hover {
-  opacity: 1; 
-}
-
-.menu-item {
-  color: white;
-  cursor: pointer;
+.secondary-cursor .cursor-background:after, .secondary-cursor .cursor-background:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
   display: block;
-  font-family: 'Ibarra Real Nova', serif;
-  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
-  text-decoration: none;
-  transition: opacity 400ms ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.secondary-cursor .cursor-background:before {
+  left: 10px;
+}
+.secondary-cursor .cursor-background:after {
+  right: 10px;
 }
 
+.slider-drag .cursor-background {
+  -webkit-animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .cursor-background:after {
+  -webkit-animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .cursor-background:before {
+  -webkit-animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .main-cursor {
+  -webkit-animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.hamburger .cursor-background {
+  -webkit-animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.hamburger .main-cursor-background {
+  -webkit-animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+          animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+@-webkit-keyframes bgDown {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes bgDown {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@-webkit-keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+@-webkit-keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}/*# sourceMappingURL=index.css.map */

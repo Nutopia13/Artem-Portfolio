@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MenuDiamond } from "./Icons/MenuDiamond";
-import { Close } from "./Icons/Close";
 import { useEffect } from "react";
 
 const NavBar = () => {
@@ -26,16 +25,16 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="flex justify-center md:min-w-[1200px]">
+      <nav className="flex justify-center z-10 md:min-w-[1200px]">
         <motion.div
           initial={{ y: -200 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
-          className="pt-6 lg:pt-10  max-w-[370px] md:min-w-[1200px] space-x-12  justify-between  items-center z-50  fixed  flex  text-white"
+          className="pt-6 lg:pt-10  max-w-[370px] md:min-w-[1200px] space-x-12  justify-between fixed items-center z-50   flex  text-white"
         >
-          <h1 className=" lg:text-2xl max-w-[200px] lg:max-w-full font-bold font-cizel">
+          <h2 className=" lg:text-2xl max-w-[200px] lg:max-w-full font-bold font-cizel">
             Masked Optics <span>Photography</span>
-          </h1>
+          </h2>
 
           <motion.div
             onClick={() => setIsOpen(!isOpen)}
