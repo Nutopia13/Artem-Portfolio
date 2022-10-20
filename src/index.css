@@ -350,3 +350,15 @@ h1{
   transform: translateY(150px);
   transition: transform .3s;
 }
+
+blockquote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.word{
+  transform: translateY(150px);
+  transition: transform .3s;
+}

@@ -8,6 +8,8 @@ import BlackGuy from "../assets/BlackGuy_Hero.jpg";
 
 const Hero = () => {
   useEffect(() => {
+    const qoutes = document.querySelector("#quote");
+    const text = new SplitType('#quote', { types: 'words' })
     const title = document.querySelector("#mytitle");
     const myTitle = new SplitType(title);
     gsap.to(".char", {
@@ -16,13 +18,13 @@ const Hero = () => {
       duration: 0.7,
       stagger: 0.05,
     });
-    //   gsap.to(".word", {
-    //     x: 0,
-    //     opacity: 1,
-    //     duration: 1,
-    //     stagger: 0.002,
-    //     delay: 0.2,
-    //   });
+
+     gsap.to(".word", {
+     y: 0,
+     opacity: 1,
+    duration: 1,
+    stagger: 0.05,
+       });
   });
 
   return (
@@ -35,11 +37,11 @@ const Hero = () => {
           >
             One Shot. One Memory
           </h1>
-          <blockquote className="italic text-md lg:text-lg relative z-20 pt-7 ">
-            <q>
-              In photography there is a reality so subtle that it becomes more
-              real than reality.
-            </q>
+          <blockquote  className="italic text-md lg:text-lg relative z-20 pt-7 ">
+            <p id = 'quote' >
+              "In photography there is a reality so subtle that it becomes more
+              real than reality."
+            </p>
           </blockquote>
         </div>
       </div>
