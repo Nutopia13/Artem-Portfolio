@@ -48,7 +48,7 @@ const NavBar = () => {
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
-                  initial={{ opacity: 0, y: 100 }}
+                  initial={{ opacity: 0, y: 1000 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -64,7 +64,7 @@ const NavBar = () => {
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
-                  initial={{ opacity: 0, y: -100 }}
+                  initial={{ opacity: 0, y: -1000 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
