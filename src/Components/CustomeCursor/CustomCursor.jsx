@@ -66,6 +66,7 @@ const CustomCursor = () => {
     };
     followMouse();
   }, []);
+
   return (
     <div className= 'cursor-wrapper hidden lg:block' >
       <div className="main-cursor " ref={mainCursor}>
@@ -74,7 +75,7 @@ const CustomCursor = () => {
       <div className="secondary-cursor" ref={secondaryCursor}>
         <div className="cursor-background"></div>
       </div>
-      ;
+
     </div>
   );
 };

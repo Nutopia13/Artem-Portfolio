@@ -5,7 +5,8 @@
 
 
 body {
-  background-color: #1f1f26;
+  height: 100vh;
+  background: -webkit-linear-gradient(142deg, #536976 0%, #292e49 100%);
 }
 
 /* ! Navbar */
@@ -128,6 +129,7 @@ body {
 /* ! Cursor */
 .App{
   cursor: none;
+
 }
 
 
@@ -339,13 +341,15 @@ body {
   }
 }
 
+/* ! Hero */
+
 h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 58px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 60rem;
+  line-height: 5.5rem;
 }
 
 .char{
