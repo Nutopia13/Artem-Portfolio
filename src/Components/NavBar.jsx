@@ -31,7 +31,7 @@ const NavBar = () => {
           initial={{ y: -1000 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
-          className="mt-6 md:mt-7 lg:mt-10  max-w-[370px] md:min-w-[700px] lg:min-w-[1200px] space-x-12 absolute justify-between items-center z-50   flex  text-white"
+          className="mt-6 md:mt-7 lg:mt-10  max-w-[370px] md:min-w-[700px] lg:min-w-[1200px] space-x-12 fixed justify-between items-center z-50   flex  text-white"
         >
           <h2 className=" lg:text-2xl max-w-[200px] lg:max-w-full font-bold font-cizel">
             Masked Optics <span>Photography</span>
