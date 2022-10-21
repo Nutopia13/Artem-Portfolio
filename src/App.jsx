@@ -12,7 +12,7 @@ function App() {
         <NavBar />
       </header>
      
-       <CustomCursor className = 'hidden' />
+       {/* <CustomCursor /> */}
       <main>
         <Hero />
         <About />
