@@ -3,10 +3,11 @@ import CustomCursor from "./Components/CustomeCursor/CustomCursor";
 import Hero from "./Components/Hero";
 import NavBar from "./Components/NavBar";
 import Portfolio from "./Components/Portfolio";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div className="App bg-black">
+    <div className="App">
   
       <header>
         <NavBar />
@@ -18,6 +19,10 @@ function App() {
         <About />
         <Portfolio />
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
       
     </div>
   );

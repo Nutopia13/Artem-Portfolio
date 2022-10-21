@@ -7,7 +7,9 @@
 body {
   height: 100vh;
   background: -webkit-linear-gradient(142deg, #536976 0%, #292e49 100%);
+  cursor: none;
 }
+
 
 /* ! Navbar */
 
@@ -128,10 +130,6 @@ body {
 
 /* ! Cursor */
 
-.App{
-  cursor: none;
-
-}
 
 
 .main-cursor,

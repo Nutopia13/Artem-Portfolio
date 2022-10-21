@@ -48,7 +48,7 @@ const NavBar = () => {
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
-                  initial={{ opacity: 0, y: 1000 }}
+                  initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -64,7 +64,7 @@ const NavBar = () => {
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 1 }}
                   className="lg:text-2xl"
-                  initial={{ opacity: 0, y: -1000 }}
+                  initial={{ opacity: 0, y: -100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -108,10 +108,10 @@ const NavBar = () => {
               id="menu-items"
               className="text-[40px] lg:text-[60px]"
             >
-              <motion.li className="menu-item">Home</motion.li>
-              <motion.li className="menu-item">Portfolio</motion.li>
-              <motion.li className="menu-item">About</motion.li>
-              <motion.li className="menu-item">Contact Us</motion.li>
+              <a href="#"><motion.li className="menu-item">Home</motion.li></a>
+              <a href="#"><motion.li className="menu-item">Portfolio</motion.li></a>
+              <a href="#"><motion.li className="menu-item">About</motion.li></a>
+              <a href="#"><motion.li className="menu-item">Contact Us</motion.li></a>
             </motion.ul>
             <div id="menu-background-pattern"></div>
             <div id="menu-background-image"></div>
