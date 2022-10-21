@@ -6,13 +6,13 @@ import Portfolio from "./Components/Portfolio";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-black">
   
       <header>
         <NavBar />
       </header>
      
-       {/* <CustomCursor /> */}
+       <CustomCursor />
       <main>
         <Hero />
         <About />
